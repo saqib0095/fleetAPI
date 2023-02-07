@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 }); */
 Route::post('/upload',[Movies::class,'upload']);
-Route::post('/delete',[Movies::class,'delete']);
 Route::get('/getMovie/{title}',[Movies::class,'getMovie']);
 Route::get('/getReleaseYear/{year}',[Movies::class,'getReleaseYear']);
 Route::get('/getGenre/{genre}',[Movies::class,'getGenre']);
