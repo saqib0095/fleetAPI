@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Movies;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+/* Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-});
+}); */
+Route::post('/upload',[Movies::class,'upload']);
+Route::post('/delete',[Movies::class,'delete']);
+Route::get('/getMovie/{title}',[Movies::class,'getMovie']);
+Route::get('/getReleaseYear/{year}',[Movies::class,'getReleaseYear']);
+Route::get('/getGenre/{genre}',[Movies::class,'getGenre']);
+Route::delete('/deleteMovie/{title}',[Movies::class,'deleteMovie']);
